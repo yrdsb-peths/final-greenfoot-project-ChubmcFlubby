@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Hero here.
+ * Our hero - the main character of the game.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Matthew Chiu) 
+ * @version (January 2023 - Version 1.0.0)
  */
 public class Hero extends Actor
 {
@@ -22,6 +22,11 @@ public class Hero extends Actor
         else if(Greenfoot.isKeyDown("right"))
         {
             move(2);
+        }
+        
+        else if(Greenfoot.isKeyDown("space"))
+        {
+            
         }
     }
 }

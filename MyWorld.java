@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * The world that our game takes place in.
  * 
  * @author (Matthew Chiu) 
- * @version (1.0.0. - December 2022)
+ * @version (January 2023 - Version 1.0.0)
  */
 public class MyWorld extends World
 {
@@ -17,8 +17,19 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        Hero seahorse = new Hero();
-        addObject(seahorse, 300, 300);
+        Hero birdie = new Hero();
+        addObject(birdie, 300, 300);
+        
+        createLand();
+    }
+    
+    
+    public void createLand()
+    {
+        Platforms platform = new Platforms();
+        int x = Greenfoot.getRandomNumber(600);
+        int y = Greenfoot.getRandomNumber(400);
+        addObject(platform, x, y);
     }
     /**
      * Counstructor - The code that gets run one time when object is created.
