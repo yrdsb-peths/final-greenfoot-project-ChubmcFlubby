@@ -41,16 +41,11 @@ public class Hero extends Actor
                 
                 if(getY() > 400 && !jumping)
                 {
-                setLocation(getX(), getY() + 5);
-                }
-                
-                else
-                {
-                    setLocation(getX(), getY() - 5);
+                    setLocation(getX(), getY() + 5);
+                    fall();
                 }
             }
         }
-        fall();
     }
     
     private void fall()
