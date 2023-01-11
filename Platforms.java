@@ -14,6 +14,7 @@ public class Platforms extends Actor
      */
     public void act()
     {
+        
         int x = getX();
         int y = getY();
         setLocation(x, y);
