@@ -23,6 +23,16 @@ public class Platforms extends Actor
         {
             move(4);
         }
+        
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(-1);
+        }
+        
+        if(getX() == 0)
+        {
+            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(600) + 30);
+        }
     }
     
     public void Ground()

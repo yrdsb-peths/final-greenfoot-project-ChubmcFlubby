@@ -18,7 +18,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         Hero birdie = new Hero();
-        addObject(birdie, 300, 300);
+        addObject(birdie, 30, 300);
         
         createLand();
     }
