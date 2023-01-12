@@ -30,6 +30,11 @@ public class Hero extends Actor
         {
             getWorld().removeObject(this);
         }
+        
+        if(getY() == 0)
+        {
+            getWorld().removeObject(this);
+        }
     }
     
     private void fall()
