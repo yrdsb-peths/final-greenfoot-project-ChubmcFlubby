@@ -14,9 +14,15 @@ public class Platforms extends Actor
      */
     public void act()
     {
-        int x = getX();
-        int y = getY();
-        setLocation(x, y);
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(-4);
+        }
+        
+        else if(Greenfoot.isKeyDown("left"))
+        {
+            move(4);
+        }
     }
     
     public void Ground()

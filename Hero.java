@@ -15,7 +15,7 @@ public class Hero extends Actor
     
     private int vSpeed = 0;
     private int acceleration = 1;
-    private int jumpHeight = -10;
+    private int jumpHeight = -5;
     
     public void act()
     {
