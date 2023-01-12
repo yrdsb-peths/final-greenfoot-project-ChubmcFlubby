@@ -14,10 +14,13 @@ public class Platforms extends Actor
      */
     public void act()
     {
-        
         int x = getX();
         int y = getY();
         setLocation(x, y);
-
+    }
+    
+    public void Ground()
+    {
+        getImage().scale(getImage().getWidth()*6, getImage().getHeight());
     }
 }

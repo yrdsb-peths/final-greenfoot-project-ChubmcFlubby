@@ -15,7 +15,7 @@ public class Hero extends Actor
     
     private int vSpeed = 0;
     private int acceleration = 1;
-    private boolean jumping = false;
+    private int jumpHeight = -10;
     
     public void act()
     {
@@ -31,26 +31,29 @@ public class Hero extends Actor
         
         else if(Greenfoot.isKeyDown("space"))
         {
-            jumping = true;
-            if(jumping)
-            {
-                if(getY() == 400 - 10)
-                {
-                    jumping = false;
-                }
-                
-                if(getY() > 400 && !jumping)
-                {
-                    setLocation(getX(), getY() + 5);
-                    fall();
-                }
-            }
+            vSpeed = jumpHeight;
+            fall();
         }
+        checkFalling();
     }
     
     private void fall()
     {
         setLocation(getX(), getY() + vSpeed);
         vSpeed = vSpeed + acceleration;
+    }
+    
+    boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platforms.class);
+        return under != null;
+    }
+    
+    public void checkFalling()
+    {
+        if(onGround() == false)
+        {
+            fall();
+        }
     }
 }
