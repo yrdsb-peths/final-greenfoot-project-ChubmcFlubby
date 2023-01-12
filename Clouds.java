@@ -14,11 +14,7 @@ public class Clouds extends Actor
      */
     public void act()
     {
-        if(Greenfoot.isKeyDown("right"))
-        {
-            move(-1);
-        }
-        
+        move(-1);
         if(getX() == 0)
         {
             setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(170) + 30);

@@ -14,24 +14,10 @@ public class Platforms extends Actor
      */
     public void act()
     {
-        if(Greenfoot.isKeyDown("right"))
-        {
-            move(-4);
-        }
-        
-        else if(Greenfoot.isKeyDown("left"))
-        {
-            move(4);
-        }
-        
-        if(Greenfoot.isKeyDown("right"))
-        {
-            move(-1);
-        }
-        
+        move(-1);
         if(getX() == 0)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(600) + 30);
+            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(250) + 30);
         }
     }
     

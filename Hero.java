@@ -19,16 +19,6 @@ public class Hero extends Actor
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("right"))
-        {
-            move(2);
-        }
-        
-        if(Greenfoot.isKeyDown("right"))
-        {
-            move(-2);
-        }
-        
         if(Greenfoot.isKeyDown("space"))
         {
             vSpeed = jumpHeight;

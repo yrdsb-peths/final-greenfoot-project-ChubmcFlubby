@@ -1,7 +1,7 @@
 #Greenfoot project file
 class.Clouds.image=Clouds.png
 class.Hero.image=pelican.png
-class.MyWorld.image=clouds.jpg
+class.MyWorld.image=sand.jpg
 class.Platforms.image=imageedit_4_3272799017.gif
 dependency1.from=MyWorld
 dependency1.to=Hero
@@ -16,7 +16,7 @@ editor.fx.0.height=1039
 editor.fx.0.width=1050
 editor.fx.0.x=877
 editor.fx.0.y=0
-height=692
+height=698
 package.numDependencies=3
 package.numTargets=5
 project.charset=windows-1252
@@ -69,7 +69,7 @@ target5.width=120
 target5.x=0
 target5.y=0
 version=3.0.0
-width=700
+width=1290
 world.lastInstantiated=MyWorld
-xPosition=877
+xPosition=0
 yPosition=0

@@ -16,14 +16,14 @@ public class MyWorld extends World
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        
+
         Hero birdie = new Hero();
-        addObject(birdie, 30, 300);
-        
+        addObject(birdie, 200, 300);
+
         createLand();
+        prepare();
     }
-    
-    
+
     public void createLand()
     {
         Platforms platform = new Platforms();
@@ -34,4 +34,15 @@ public class MyWorld extends World
     /**
      * Counstructor - The code that gets run one time when object is created.
      */
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        Clouds clouds = new Clouds();
+        addObject(clouds,115,95);
+        Clouds clouds2 = new Clouds();
+        addObject(clouds2,426,108);
+    }
 }
