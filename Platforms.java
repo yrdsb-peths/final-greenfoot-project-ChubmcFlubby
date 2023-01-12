@@ -25,4 +25,6 @@ public class Platforms extends Actor
     {
         getImage().scale(getImage().getWidth()*6, getImage().getHeight());
     }
+    
+    
 }

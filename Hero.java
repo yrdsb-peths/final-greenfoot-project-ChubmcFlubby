@@ -25,6 +25,11 @@ public class Hero extends Actor
             fall();
         }
         checkFalling();
+        
+        if(isTouching(Platforms.class))
+        {
+            getWorld().removeObject(this);
+        }
     }
     
     private void fall()
