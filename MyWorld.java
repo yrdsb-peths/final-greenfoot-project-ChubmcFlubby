@@ -19,30 +19,34 @@ public class MyWorld extends World
 
         Hero birdie = new Hero();
         addObject(birdie, 200, 300);
-
-        createLand();
+        
         prepare();
     }
-
-    public void createLand()
+    
+    public void gameOver()
     {
-        Platforms platform = new Platforms();
-        int x = Greenfoot.getRandomNumber(600);
-        int y = Greenfoot.getRandomNumber(400);
-        addObject(platform, x, y);
+        Label gameOverLabel = new Label("Game Over!", 100);
+        addObject(gameOverLabel, 300, 200);
     }
+    
     /**
      * Counstructor - The code that gets run one time when object is created.
      */
     /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+    * Prepare the world for the start of the program.
+    * That is: create the initial objects and add them to the world.
+    */
     private void prepare()
     {
         Clouds clouds = new Clouds();
         addObject(clouds,115,95);
         Clouds clouds2 = new Clouds();
         addObject(clouds2,426,108);
+        removeObject(clouds);
+        removeObject(clouds2);
+        Platforms platforms = new Platforms();
+        addObject(platforms,285,169);
+        platforms.setLocation(292,252);
+        platforms.setLocation(483,268);
     }
 }

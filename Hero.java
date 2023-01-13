@@ -28,13 +28,16 @@ public class Hero extends Actor
         
         if(isTouching(Platforms.class))
         {
+            MyWorld world = (MyWorld) getWorld();
+            world.gameOver();
             getWorld().removeObject(this);
         }
         
-        if(getY() == 0)
-        {
-            getWorld().removeObject(this);
-        }
+        //if(getY() == 0)
+        //{
+        //    getWorld().removeObject(this);
+       // }
+        
     }
     
     private void fall()
