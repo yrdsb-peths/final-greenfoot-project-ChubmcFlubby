@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (Matthew Chiu) 
  * @version (January 2023 - Version 1.0.0)
  */
-public class Platforms extends Actor
+public class FirstPipe extends Actor
 {
     /**
-     * Act - do whatever the Platforms wants to do. This method is called whenever
+     * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

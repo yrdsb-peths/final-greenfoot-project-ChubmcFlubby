@@ -33,7 +33,7 @@ public class Hero extends Actor
             world.removeObject(this);
         }
         
-        if(isTouching(Platforms.class))
+        if(isTouching(FirstPipe.class))
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
@@ -49,7 +49,7 @@ public class Hero extends Actor
     
     boolean onGround()
     {
-        Actor under = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platforms.class);
+        Actor under = getOneObjectAtOffset(0, getImage().getHeight() / 2, FirstPipe.class);
         return under != null;
     }
     

@@ -14,6 +14,21 @@ public class SecondPipe extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        move(-1);
+        if(getX() == 0)
+        {
+            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(250) + 30);
+        }
     }
+    
+    public void Ground()
+    {
+        getImage().scale(getImage().getWidth()*6, getImage().getHeight());
+    }
+    
+    //public void Inverted()
+    //{
+    //    invertedPipe = new GreenfootImage("imageedit_9_52168353");
+     //   newImage.mirrorVertically();
+    //}
 }

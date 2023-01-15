@@ -21,6 +21,7 @@ public class MyWorld extends World
         addObject(birdie, 200, 300);
         
         prepare();
+        addObstacles();
     }
     
     public void gameOver()
@@ -32,17 +33,17 @@ public class MyWorld extends World
     public void addObstacles()
     {
         int randomNumber = Greenfoot.getRandomNumber(6);
-        addObject(new Platforms(), getWidth() - 1, 450 + 0 * randomNumber);
-        addObject(new Platforms(), getWidth() - 1, -200 + 50 + randomNumber);
+        addObject(new FirstPipe(), getWidth()-1, 650);
+        addObject(new SecondPipe(), getWidth()-1, -50);
     }
     
     /**
      * Counstructor - The code that gets run one time when object is created.
      */
     /**
-    * Prepare the world for the start of the program.
-    * That is: create the initial objects and add them to the world.
-    */
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
     private void prepare()
     {
         Clouds clouds = new Clouds();
@@ -51,9 +52,19 @@ public class MyWorld extends World
         addObject(clouds2,426,108);
         removeObject(clouds);
         removeObject(clouds2);
-        Platforms platforms = new Platforms();
+        FirstPipe platforms = new FirstPipe();
         addObject(platforms,285,169);
         platforms.setLocation(292,252);
         platforms.setLocation(483,268);
+        SecondPipe secondPipe = new SecondPipe();
+        addObject(secondPipe,538,392);
+        platforms.setLocation(464,354);
+        removeObject(platforms);
+        FirstPipe platform1 = new FirstPipe();
+        addObject(platforms,464,394);
+        removeObject(platforms);
+        removeObject(secondPipe);
+        FirstPipe firstPipe2 = new FirstPipe();
+        addObject(firstPipe2,571,393);
     }
 }
