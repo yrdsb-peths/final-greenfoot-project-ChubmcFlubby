@@ -15,7 +15,7 @@ public class MyWorld extends World
     public MyWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1);
+        super(600, 400, 1, false);
 
         Hero birdie = new Hero();
         addObject(birdie, 200, 300);
@@ -27,6 +27,13 @@ public class MyWorld extends World
     {
         Label gameOverLabel = new Label("Game Over!", 100);
         addObject(gameOverLabel, 300, 200);
+    }
+    
+    public void addObstacles()
+    {
+        int randomNumber = Greenfoot.getRandomNumber(6);
+        addObject(new Platforms(), getWidth() - 1, 450 + 0 * randomNumber);
+        addObject(new Platforms(), getWidth() - 1, -200 + 50 + randomNumber);
     }
     
     /**

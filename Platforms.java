@@ -19,7 +19,10 @@ public class Platforms extends Actor
         {
             setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(250) + 30);
         }
+    
     }
+    
+    
     
     public void Ground()
     {
