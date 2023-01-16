@@ -26,9 +26,4 @@ public class SecondPipe extends Actor
         getImage().scale(getImage().getWidth()*6, getImage().getHeight());
     }
     
-    //public void Inverted()
-    //{
-    //    invertedPipe = new GreenfootImage("imageedit_9_52168353");
-     //   newImage.mirrorVertically();
-    //}
 }
