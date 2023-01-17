@@ -12,15 +12,21 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    int time = 0;
     public MyWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1, false);
+        super(600, 600, 1, false);
 
         Hero birdie = new Hero();
         addObject(birdie, 200, 300);
         
         prepare();
+    }
+    
+    public void act()
+    {
+        time++;
         addObstacles();
     }
     
@@ -32,11 +38,14 @@ public class MyWorld extends World
     
     public void addObstacles()
     {
-        int randomNumber = Greenfoot.getRandomNumber(6);
-        addObject(new FirstPipe(), getWidth()-1, 450 + 50 * randomNumber);
-        addObject(new SecondPipe(), getWidth()-1, -200 + 50 * randomNumber);
+        if(time % 100 == 0)
+        {
+            int randomNumber = Greenfoot.getRandomNumber(6);
+            addObject(new FirstPipe(), getWidth()-1, 350);
+            addObject(new SecondPipe(), getWidth()-1, 10);
+        }
     }
-    
+
     /**
      * Counstructor - The code that gets run one time when object is created.
      */
@@ -46,25 +55,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        Clouds clouds = new Clouds();
-        addObject(clouds,115,95);
-        Clouds clouds2 = new Clouds();
-        addObject(clouds2,426,108);
-        removeObject(clouds);
-        removeObject(clouds2);
-        FirstPipe platforms = new FirstPipe();
-        addObject(platforms,285,169);
-        platforms.setLocation(292,252);
-        platforms.setLocation(483,268);
-        SecondPipe secondPipe = new SecondPipe();
-        addObject(secondPipe,538,392);
-        platforms.setLocation(464,354);
-        removeObject(platforms);
-        FirstPipe platform1 = new FirstPipe();
-        addObject(platforms,464,394);
-        removeObject(platforms);
-        removeObject(secondPipe);
-        FirstPipe firstPipe2 = new FirstPipe();
-        addObject(firstPipe2,571,393);
+        
     }
 }

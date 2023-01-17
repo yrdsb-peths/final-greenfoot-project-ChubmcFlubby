@@ -14,10 +14,10 @@ public class FirstPipe extends Actor
      */
     public void act()
     {
-        move(-1);
+        move(-2);
         if(getX() == 0)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(250) + 30);
+            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(200) + 30);
         }
     
     }

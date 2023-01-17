@@ -12,52 +12,52 @@ public class Hero extends Actor
      * Act - do whatever the Hero wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
-    private int vSpeed = 0;
-    private int acceleration = 1;
-    private int jumpHeight = -5;
+    private int jumpHeight = -10;
+    private int count = 0;
     
     public void act()
     {
+        jumpHeight++;
+        count++;
+        fall();
+        jump();
+        contact();
+        collision();
+    }
+    
+    public void jump()
+    {
         if(Greenfoot.isKeyDown("space"))
         {
-            vSpeed = jumpHeight;
-            fall();
+            jumpHeight = -24;
         }
-        checkFalling();
-        
+    }
+    
+    public void fall()
+    {
+        if(count % 2 ==0)
+        {
+            setLocation(getX(), getY() + jumpHeight);
+        }
+    }
+    
+    public void contact()
+    {
         if(getY() >= getWorld().getHeight())
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
         }
-        
+    }
+    
+    public void collision()
+    {
         if(isTouching(FirstPipe.class))
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             getWorld().removeObject(this);
-        }
-    }
-    
-    private void fall()
-    {
-        setLocation(getX(), getY() + vSpeed);
-        vSpeed = vSpeed + acceleration;
-    }
-    
-    boolean onGround()
-    {
-        Actor under = getOneObjectAtOffset(0, getImage().getHeight() / 2, FirstPipe.class);
-        return under != null;
-    }
-    
-    public void checkFalling()
-    {
-        if(onGround() == false)
-        {
-            fall();
         }
     }
 }
