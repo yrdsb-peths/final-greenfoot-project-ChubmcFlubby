@@ -35,7 +35,7 @@ public class Hero extends Actor
     
     public void fall()
     {
-        if(count % 2 ==0)
+        if(count % 2 == 0)
         {
             setLocation(getX(), getY() + jumpHeight);
         }
@@ -51,6 +51,7 @@ public class Hero extends Actor
             Greenfoot.stop();
         }
     }
+    
     
     public void collision()
     {

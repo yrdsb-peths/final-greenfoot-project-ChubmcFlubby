@@ -38,11 +38,6 @@ public class MyWorld extends World
         addObstacles();
     }
     
-    public void increaseScore()
-    {
-        score++;
-        scoreBoard.setValue(score);
-    }
     
     public void gameOver()
     {
@@ -60,6 +55,7 @@ public class MyWorld extends World
         }
     }
 
+
     /**
      * Counstructor - The code that gets run one time when object is created.
      */
@@ -69,6 +65,6 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        
+
     }
 }
