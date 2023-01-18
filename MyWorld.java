@@ -47,7 +47,7 @@ public class MyWorld extends World
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
-        addObject(gameOverLabel, 350, 200);
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
     }
     
     public void addObstacles()
@@ -55,8 +55,8 @@ public class MyWorld extends World
         if(time % 100 == 0)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
-            addObject(new FirstPipe(), getWidth()-1, 450 + 50 * randomNumber);
-            addObject(new SecondPipe(), getWidth()-1, -200 + 50 * randomNumber);
+            addObject(new FirstPipe(), getWidth()-1, 400 + 50 * randomNumber);
+            addObject(new SecondPipe(), getWidth()-1, -175 + 50 * randomNumber);
         }
     }
 

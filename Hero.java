@@ -48,6 +48,7 @@ public class Hero extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
+            Greenfoot.stop();
         }
     }
     
@@ -58,6 +59,7 @@ public class Hero extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
+            Greenfoot.stop();
         }
         
         if(isTouching(SecondPipe.class))
@@ -65,6 +67,7 @@ public class Hero extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
+            Greenfoot.stop();
         }
     }
 }
