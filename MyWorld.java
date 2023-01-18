@@ -12,14 +12,22 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    public int score = 0;
     int time = 0;
+    Label scoreBoard;
+    Label gameOverLabel;
+    
     public MyWorld()
     {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 600, 1, false);
+        super(600, 550, 1, false);
 
-        Hero birdie = new Hero();
-        addObject(birdie, 200, 300);
+        Hero seahorse = new Hero();
+        addObject(seahorse, 300, 300);
+        
+        Label scoreBoard = new Label(0, 80);
+        addObject(scoreBoard, 50, 50);
         
         prepare();
     }
@@ -30,10 +38,16 @@ public class MyWorld extends World
         addObstacles();
     }
     
+    public void increaseScore()
+    {
+        score++;
+        scoreBoard.setValue(score);
+    }
+    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
-        addObject(gameOverLabel, 300, 200);
+        addObject(gameOverLabel, 350, 200);
     }
     
     public void addObstacles()
