@@ -41,8 +41,8 @@ public class MyWorld extends World
         if(time % 100 == 0)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
-            addObject(new FirstPipe(), getWidth()-1, 350);
-            addObject(new SecondPipe(), getWidth()-1, 10);
+            addObject(new FirstPipe(), getWidth()-1, 450 + 50 * randomNumber);
+            addObject(new SecondPipe(), getWidth()-1, -200 + 50 * randomNumber);
         }
     }
 

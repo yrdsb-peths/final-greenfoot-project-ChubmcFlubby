@@ -14,6 +14,7 @@ public class Hero extends Actor
      */
     private int jumpHeight = -10;
     private int count = 0;
+    MyWorld world = (MyWorld) getWorld();
     
     public void act()
     {
@@ -29,7 +30,7 @@ public class Hero extends Actor
     {
         if(Greenfoot.isKeyDown("space"))
         {
-            jumpHeight = -24;
+            jumpHeight = -10;
         }
     }
     
@@ -45,7 +46,6 @@ public class Hero extends Actor
     {
         if(getY() >= getWorld().getHeight())
         {
-            MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
         }
@@ -55,9 +55,14 @@ public class Hero extends Actor
     {
         if(isTouching(FirstPipe.class))
         {
-            MyWorld world = (MyWorld) getWorld();
             world.gameOver();
-            getWorld().removeObject(this);
+            world.removeObject(this);
+        }
+        
+        if(isTouching(SecondPipe.class))
+        {
+            world.gameOver();
+            world.removeObject(this);
         }
     }
 }
