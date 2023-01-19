@@ -38,22 +38,12 @@ public class MyWorld extends World
         addObstacles();
     }
     
-<<<<<<< HEAD
-    //public void increaseScore()
-    //{
-     //   if(FirstPipe.class <= x )
-      //  {
-       //     score++;
-       //     scoreBoard.setValue(score);
-       // }
-    //}
-=======
->>>>>>> parent of 5a4be30 (minor fixes.)
-    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        MyWorld endWorld = new MyWorld();
+        Greenfoot.setWorld(endWorld);
     }
     
     public void addObstacles()
