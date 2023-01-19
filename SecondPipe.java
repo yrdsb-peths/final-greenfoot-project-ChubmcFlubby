@@ -12,15 +12,12 @@ public class SecondPipe extends Actor
      * Act - do whatever the SecondPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int x2 = getX();
-    int y2 = getY();
-    
     public void act()
     {
         move(-2);
-        if(getX() == 0)
+        if(getX() <= 1)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(200) + 30);
+            getWorld().removeObject(this);
         }
     }
     

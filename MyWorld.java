@@ -13,7 +13,7 @@ public class MyWorld extends World
      * 
      */
     
-    public int score = 0;
+    int score = 0;
     int time = 0;
     Label scoreBoard;
     Label gameOverLabel;
@@ -26,11 +26,10 @@ public class MyWorld extends World
         Hero seahorse = new Hero();
         addObject(seahorse, 300, 300);
         
-        Label scoreBoard = new Label(0, 80);
+        scoreBoard = new Label(0, 80);
         addObject(scoreBoard, 50, 50);
         
         prepare();
-        //increaseScore();
     }
     
     public void act()
@@ -39,14 +38,10 @@ public class MyWorld extends World
         addObstacles();
     }
     
-    //public void increaseScore()
-    //{
-     //   if(FirstPipe.class < position )
-      //  {
-       //     score++;
-       //     scoreBoard.setValue(score);
-       // }
-    //}
+    public void increaseScore()
+    {
+        scoreBoard.setValue(++score);
+    }
     
     public void gameOver()
     {
@@ -56,14 +51,14 @@ public class MyWorld extends World
     
     public void addObstacles()
     {
-        if(time % 100 == 0)
+        if(time >= 100)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
             addObject(new FirstPipe(), getWidth()-1, 400 + 50 * randomNumber);
             addObject(new SecondPipe(), getWidth()-1, -175 + 50 * randomNumber);
+            time = 0;
         }
     }
-
 
     /**
      * Counstructor - The code that gets run one time when object is created.
