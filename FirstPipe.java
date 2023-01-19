@@ -8,8 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FirstPipe extends Actor
 {
+<<<<<<< HEAD
     int x = getX();
     
+=======
+>>>>>>> parent of 5a4be30 (minor fixes.)
     /**
      * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

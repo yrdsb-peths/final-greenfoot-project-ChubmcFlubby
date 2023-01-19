@@ -30,7 +30,6 @@ public class MyWorld extends World
         addObject(scoreBoard, 50, 50);
         
         prepare();
-        //increaseScore();
     }
     
     public void act()
@@ -39,6 +38,7 @@ public class MyWorld extends World
         addObstacles();
     }
     
+<<<<<<< HEAD
     //public void increaseScore()
     //{
      //   if(FirstPipe.class <= x )
@@ -47,6 +47,8 @@ public class MyWorld extends World
        //     scoreBoard.setValue(score);
        // }
     //}
+=======
+>>>>>>> parent of 5a4be30 (minor fixes.)
     
     public void gameOver()
     {
