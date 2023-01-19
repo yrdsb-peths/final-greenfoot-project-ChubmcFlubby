@@ -12,12 +12,20 @@ public class FirstPipe extends Actor
      * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    boolean scoreCounted = false;
+    
     public void act()
     {
         move(-2);
-        if(getX() == 0)
+        if(getX() <= 300 && !scoreCounted)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(200) + 30);
+            getWorldOfType(MyWorld.class).increaseScore();
+            scoreCounted = true;
+        }
+        
+        if(getX() <= 1)
+        {
+            getWorld().removeObject(this);
         }
     
     }

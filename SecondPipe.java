@@ -16,9 +16,9 @@ public class SecondPipe extends Actor
     public void act()
     {
         move(-2);
-        if(getX() == 0)
+        if(getX() <= 1)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(200) + 30);
+            getWorld().removeObject(this);
         }
     }
     

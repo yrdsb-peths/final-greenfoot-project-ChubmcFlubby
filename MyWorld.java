@@ -38,25 +38,28 @@ public class MyWorld extends World
         addObstacles();
     }
     
+    public void increaseScore()
+    {
+        scoreBoard.setValue(++score);
+    }
+    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
-        MyWorld endWorld = new MyWorld();
-        Greenfoot.setWorld(endWorld);
     }
     
     public void addObstacles()
     {
-        if(time % 100 == 0)
+        if(time >= 100)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
             addObject(new FirstPipe(), getWidth()-1, 400 + 50 * randomNumber);
             addObject(new SecondPipe(), getWidth()-1, -175 + 50 * randomNumber);
+            time = 0;
         }
     }
-
-
+    
     /**
      * Counstructor - The code that gets run one time when object is created.
      */

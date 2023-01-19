@@ -21,7 +21,6 @@ public class Hero extends Actor
         count++;
         fall();
         jump();
-        contact();
         collision();
     }
     
@@ -41,29 +40,11 @@ public class Hero extends Actor
         }
     }
     
-    public void contact()
-    {
-        if(getY() >= getWorld().getHeight())
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.gameOver();
-            world.removeObject(this);
-            Greenfoot.stop();
-        }
-    }
-    
-    
     public void collision()
     {
-        if(isTouching(FirstPipe.class))
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.gameOver();
-            world.removeObject(this);
-            Greenfoot.stop();
-        }
-        
-        if(isTouching(SecondPipe.class))
+        if(getY() >= getWorld().getHeight() || 
+        isTouching(FirstPipe.class) || 
+        isTouching(SecondPipe.class))
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
