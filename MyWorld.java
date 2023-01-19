@@ -15,8 +15,10 @@ public class MyWorld extends World
     
     int score = 0;
     int time = 0;
+    int level = 1;
     Label scoreBoard;
     Label gameOverLabel;
+    Label endScore;
     
     public MyWorld()
     {
@@ -41,12 +43,19 @@ public class MyWorld extends World
     public void increaseScore()
     {
         scoreBoard.setValue(++score);
+        if(score % 5 == 0)
+        {
+            level += 1;
+        }
     }
     
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
         addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        Label endScore = new Label("Score: " + score, 100);
+        addObject(endScore, 303, 351);
+        removeObject(scoreBoard);
     }
     
     public void addObstacles()
@@ -59,6 +68,7 @@ public class MyWorld extends World
             time = 0;
         }
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.

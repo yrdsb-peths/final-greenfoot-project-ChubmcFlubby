@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FirstPipe extends Actor
 {
     boolean scoreCounted = false;
-    
+    int speed = -2;
     /**
      * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,6 +28,10 @@ public class FirstPipe extends Actor
         }
     }
     
+    public void setSpeed(int spd)
+    {
+        speed = spd;
+    }
     
     
     public void Ground()

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SecondPipe extends Actor
 {
+    int speed2 = -2;
     /**
      * Act - do whatever the SecondPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -19,6 +20,11 @@ public class SecondPipe extends Actor
         {
             getWorld().removeObject(this);
         }
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed2 = spd;
     }
     
     public void Ground()
