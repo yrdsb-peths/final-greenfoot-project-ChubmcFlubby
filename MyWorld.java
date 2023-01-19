@@ -13,7 +13,7 @@ public class MyWorld extends World
      * 
      */
     
-    public int score = 0;
+    int score = 0;
     int time = 0;
     Label scoreBoard;
     Label gameOverLabel;
@@ -28,8 +28,6 @@ public class MyWorld extends World
         
         Label scoreBoard = new Label(0, 80);
         addObject(scoreBoard, 50, 50);
-        
-        prepare();
     }
     
     public void act()
@@ -59,6 +57,7 @@ public class MyWorld extends World
             time = 0;
         }
     }
+}
     
     /**
      * Counstructor - The code that gets run one time when object is created.
@@ -67,8 +66,3 @@ public class MyWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
-    {
-
-    }
-}

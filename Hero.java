@@ -42,9 +42,7 @@ public class Hero extends Actor
     
     public void collision()
     {
-        if(getY() >= getWorld().getHeight() || 
-        isTouching(FirstPipe.class) || 
-        isTouching(SecondPipe.class))
+        if(getY() >= getWorld().getHeight() || isTouching(FirstPipe.class) || isTouching(SecondPipe.class))
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();

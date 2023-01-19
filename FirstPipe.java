@@ -12,6 +12,7 @@ public class FirstPipe extends Actor
      * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     boolean scoreCounted = false;
     
     public void act()
@@ -22,12 +23,10 @@ public class FirstPipe extends Actor
             getWorldOfType(MyWorld.class).increaseScore();
             scoreCounted = true;
         }
-        
         if(getX() <= 1)
         {
             getWorld().removeObject(this);
         }
-    
     }
     
     public void Ground()
