@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class FirstPipe extends Actor
 {
+    int x = getX();
+    int y = getY();
+    
     /**
      * Act - do whatever the FirstPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

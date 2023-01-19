@@ -12,6 +12,8 @@ public class SecondPipe extends Actor
      * Act - do whatever the SecondPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int x2 = getX();
+    int y2 = getY();
     
     public void act()
     {

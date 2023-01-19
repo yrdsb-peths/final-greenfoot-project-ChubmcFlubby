@@ -30,6 +30,7 @@ public class MyWorld extends World
         addObject(scoreBoard, 50, 50);
         
         prepare();
+        //increaseScore();
     }
     
     public void act()
@@ -38,6 +39,14 @@ public class MyWorld extends World
         addObstacles();
     }
     
+    //public void increaseScore()
+    //{
+     //   if(FirstPipe.class < position )
+      //  {
+       //     score++;
+       //     scoreBoard.setValue(score);
+       // }
+    //}
     
     public void gameOver()
     {
