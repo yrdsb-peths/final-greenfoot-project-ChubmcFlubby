@@ -41,7 +41,7 @@ public class MyWorld extends World
     
     //public void increaseScore()
     //{
-     //   if(FirstPipe.class < position )
+     //   if(FirstPipe.class <= x )
       //  {
        //     score++;
        //     scoreBoard.setValue(score);
