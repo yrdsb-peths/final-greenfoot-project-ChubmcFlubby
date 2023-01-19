@@ -26,8 +26,10 @@ public class MyWorld extends World
         Hero seahorse = new Hero();
         addObject(seahorse, 300, 300);
         
-        Label scoreBoard = new Label(0, 80);
+        scoreBoard = new Label(0, 80);
         addObject(scoreBoard, 50, 50);
+        
+        prepare();
     }
     
     public void act()
@@ -57,12 +59,12 @@ public class MyWorld extends World
             time = 0;
         }
     }
-}
-    
-    /**
-     * Counstructor - The code that gets run one time when object is created.
-     */
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
+    private void prepare()
+    {
+
+    }
+}
