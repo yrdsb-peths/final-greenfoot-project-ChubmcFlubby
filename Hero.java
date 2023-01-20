@@ -49,6 +49,7 @@ public class Hero extends Actor
             world.gameOver();
             world.removeObject(this);
             gameOverSound.play();
+            Greenfoot.stop();
         }
     }
 }

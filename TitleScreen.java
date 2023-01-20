@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class TitleScreen extends World
 {
     Label titleLabel = new Label("Flappy Seahorse", 50);
-    Label instruction = new Label("Press Spacebar to Jump!", 50);
+    Label instruction = new Label("Press Spacebar to Jump / Start!", 50);
     Label instruction2 = new Label("Jump between the seaweed!", 50);
     
     /**
@@ -21,7 +21,7 @@ public class TitleScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 550, 1, false); 
         addObject(titleLabel, 310, 60);
-        addObject(instruction, 305, 430);
+        addObject(instruction, 302, 433);
         addObject(instruction2, 300, 502);
     }
     
