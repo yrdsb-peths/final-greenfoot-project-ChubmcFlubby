@@ -49,6 +49,11 @@ public class MyWorld extends World
         }
     }
     
+    public int getLevel()
+    {
+        return level;
+    }
+    
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
@@ -60,7 +65,7 @@ public class MyWorld extends World
     
     public void addObstacles()
     {
-        if(time >= 100)
+        if(time >= 200/level)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
             addObject(new FirstPipe(), getWidth()-1, 400 + 50 * randomNumber);

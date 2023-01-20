@@ -16,7 +16,8 @@ public class FirstPipe extends Actor
      */
     public void act()
     {
-        move(-2);
+        setSpeed();
+        move(speed);
         if(getX() <= 300 && !scoreCounted)
         {
             getWorldOfType(MyWorld.class).increaseScore();
@@ -28,9 +29,9 @@ public class FirstPipe extends Actor
         }
     }
     
-    public void setSpeed(int spd)
+    private void setSpeed()
     {
-        speed = spd;
+        speed = getWorldOfType(MyWorld.class).getLevel() * -1;
     }
     
     
