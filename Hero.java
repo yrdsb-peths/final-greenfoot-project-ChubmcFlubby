@@ -14,6 +14,7 @@ public class Hero extends Actor
      */
     private int jumpHeight = -10;
     private int count = 0;
+    //GreenfootSound gameOverSound = new GreenfootSound("Sad-Trombone-A1-www.fesliyanstudios.com.");
     
     public void act()
     {
@@ -21,7 +22,6 @@ public class Hero extends Actor
         count++;
         fall();
         jump();
-        contact();
         collision();
     }
     
@@ -35,36 +35,20 @@ public class Hero extends Actor
     
     public void fall()
     {
-        if(count % 2 ==0)
+        if(count % 2 == 0)
         {
             setLocation(getX(), getY() + jumpHeight);
         }
     }
     
-    public void contact()
-    {
-        if(getY() >= getWorld().getHeight())
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.gameOver();
-            world.removeObject(this);
-        }
-    }
-    
     public void collision()
     {
-        if(isTouching(FirstPipe.class))
+        if(getY() >= getWorld().getHeight() || isTouching(FirstPipe.class) || isTouching(SecondPipe.class))
         {
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
-        }
-        
-        if(isTouching(SecondPipe.class))
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.gameOver();
-            world.removeObject(this);
+            //gameOverSound.play();
         }
     }
 }

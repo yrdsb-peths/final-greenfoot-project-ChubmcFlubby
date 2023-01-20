@@ -13,10 +13,12 @@ public class MyWorld extends World
      * 
      */
     
-    public int score = 0;
+    int score = 0;
     int time = 0;
+    int level = 1;
     Label scoreBoard;
     Label gameOverLabel;
+    Label endScore;
     
     public MyWorld()
     {
@@ -26,7 +28,7 @@ public class MyWorld extends World
         Hero seahorse = new Hero();
         addObject(seahorse, 300, 300);
         
-        Label scoreBoard = new Label(0, 80);
+        scoreBoard = new Label(0, 80);
         addObject(scoreBoard, 50, 50);
         
         prepare();
@@ -40,35 +42,44 @@ public class MyWorld extends World
     
     public void increaseScore()
     {
-        score++;
-        scoreBoard.setValue(score);
+        scoreBoard.setValue(++score);
+        if(score % 5 == 0)
+        {
+            level += 1;
+        }
+    }
+    
+    public int getLevel()
+    {
+        return level;
     }
     
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
-        addObject(gameOverLabel, 350, 200);
+        addObject(gameOverLabel, getWidth()/2, getHeight()/2);
+        Label endScore = new Label("Score: " + score, 100);
+        addObject(endScore, 303, 351);
+        removeObject(scoreBoard);
     }
     
     public void addObstacles()
     {
-        if(time % 100 == 0)
+        if(time >= 200/level)
         {
             int randomNumber = Greenfoot.getRandomNumber(6);
-            addObject(new FirstPipe(), getWidth()-1, 450 + 50 * randomNumber);
-            addObject(new SecondPipe(), getWidth()-1, -200 + 50 * randomNumber);
+            addObject(new FirstPipe(), getWidth()-1, 400 + 50 * randomNumber);
+            addObject(new SecondPipe(), getWidth()-1, -175 + 50 * randomNumber);
+            time = 0;
         }
     }
-
-    /**
-     * Counstructor - The code that gets run one time when object is created.
-     */
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare()
     {
-        
+
     }
 }

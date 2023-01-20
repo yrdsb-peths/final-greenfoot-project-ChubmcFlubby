@@ -8,17 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SecondPipe extends Actor
 {
+    int speed = -2;
     /**
      * Act - do whatever the SecondPipe wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        move(-2);
-        if(getX() == 0)
+        setSpeed();
+        move(speed);
+        if(getX() <= 1)
         {
-            setLocation(getWorld().getWidth() - 1, Greenfoot.getRandomNumber(200) + 30);
+            getWorld().removeObject(this);
         }
+    }
+    
+    private void setSpeed()
+    {
+        speed = getWorldOfType(MyWorld.class).getLevel() * -1;
     }
     
     public void Ground()
