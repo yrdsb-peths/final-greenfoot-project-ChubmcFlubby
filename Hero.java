@@ -14,6 +14,7 @@ public class Hero extends Actor
      */
     private int jumpHeight = -10;
     private int count = 0;
+    //GreenfootSound gameOverSound = new GreenfootSound("Sad- Trombone-A1-www.fesliyanstudios.com.mp3");
     
     public void act()
     {
@@ -47,7 +48,7 @@ public class Hero extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.gameOver();
             world.removeObject(this);
-            Greenfoot.stop();
+            //gameOverSound.play();
         }
     }
 }
