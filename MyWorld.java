@@ -13,6 +13,7 @@ public class MyWorld extends World
      * 
      */
     
+    //Local variables and objects.
     int score = 0;
     int time = 0;
     int level = 1;
@@ -22,26 +23,27 @@ public class MyWorld extends World
     
     public MyWorld()
     {
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 600x550 cells with a cell size of 1x1 pixels.
         super(600, 550, 1, false);
-
+        
+        //Add in our objects to the world.
         Hero seahorse = new Hero();
         addObject(seahorse, 300, 300);
         
         scoreBoard = new Label(0, 80);
         addObject(scoreBoard, 50, 50);
-        
-        prepare();
     }
     
     public void act()
     {
+        //Here, we increase time and add pipes into the world throughout the game.
         time++;
         addObstacles();
     }
     
     public void increaseScore()
     {
+        //Increase the score and set it to the scoreboard. If the score gets past 5, increase the level of difficulty by 1.
         scoreBoard.setValue(++score);
         if(score % 5 == 0)
         {
@@ -49,11 +51,13 @@ public class MyWorld extends World
         }
     }
     
+    //A getter method for our level mechanic.
     public int getLevel()
     {
         return level;
     }
     
+    //Add and remove objects when the game is over.
     public void gameOver()
     {
         Label gameOverLabel = new Label("Game Over!", 100);
@@ -63,6 +67,7 @@ public class MyWorld extends World
         removeObject(scoreBoard);
     }
     
+    //Add pipes at randomly generated locations at set time increments.
     public void addObstacles()
     {
         if(time >= 200/level)
@@ -72,14 +77,5 @@ public class MyWorld extends World
             addObject(new SecondPipe(), getWidth()-1, -175 + 50 * randomNumber);
             time = 0;
         }
-    }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-
     }
 }

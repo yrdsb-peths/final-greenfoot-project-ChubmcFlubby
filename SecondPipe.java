@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class SecondPipe extends Actor
 {
+    //Variable that tracks the speed of this pipe.
     int speed = -2;
     /**
      * Act - do whatever the SecondPipe wants to do. This method is called whenever
@@ -15,22 +16,20 @@ public class SecondPipe extends Actor
      */
     public void act()
     {
+        //The method is called here.
         setSpeed();
         move(speed);
+        
+        //If the pipe reaches the end of the screen, the object will be removed.
         if(getX() <= 1)
         {
             getWorld().removeObject(this);
         }
     }
     
+    //This method increases the speed of the pipe depending on the level of the game.
     private void setSpeed()
     {
         speed = getWorldOfType(MyWorld.class).getLevel() * -1;
     }
-    
-    public void Ground()
-    {
-        getImage().scale(getImage().getWidth()*6, getImage().getHeight());
-    }
-    
 }
