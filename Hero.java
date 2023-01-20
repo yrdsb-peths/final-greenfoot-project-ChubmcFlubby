@@ -14,7 +14,7 @@ public class Hero extends Actor
      */
     private int jumpHeight = -10;
     private int count = 0;
-    //GreenfootSound gameOverSound = new GreenfootSound("Sad- Trombone-A1-www.fesliyanstudios.com.mp3");
+    //GreenfootSound gameOverSound = new GreenfootSound("Sad-Trombone-A1-www.fesliyanstudios.com.");
     
     public void act()
     {
